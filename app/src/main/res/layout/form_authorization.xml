@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutFormAuthorization"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/buttonAuthorization"
+        app:layout_constraintStart_toStartOf="parent"
+        android:padding="10dp">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineSeparation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewCommerceCode"
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="5dp"
+            android:text="@string/commercial_code"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineSeparation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editTextCommerceCode"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="5dp"
+            android:hint="@string/commercial_code"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineSeparation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCommerceCode" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewTerminalCode"
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="5dp"
+            android:text="@string/identification_mobile_device"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewCommerceCode"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guidelineSeparation"
+            app:layout_constraintTop_toTopOf="@+id/textViewCommerceCode" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editTextTerminalCode"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="5dp"
+            android:hint="@string/identification_mobile_device"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextCommerceCode"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guidelineSeparation"
+            app:layout_constraintTop_toTopOf="@+id/editTextCommerceCode" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewAmount"
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="5dp"
+            android:text="@string/total_value"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineSeparation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextCommerceCode" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editTextAmount"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="5dp"
+            android:hint="@string/total_value"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:textSize="13sp"
+            android:inputType="number"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineSeparation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAmount" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewTextCard"
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="5dp"
+            android:text="@string/card_number"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/textViewAmount"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guidelineSeparation"
+            app:layout_constraintTop_toTopOf="@id/textViewAmount" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editTextCard"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="5dp"
+            android:hint="@string/card_number"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@id/editTextAmount"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guidelineSeparation"
+            app:layout_constraintTop_toTopOf="@id/editTextAmount" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editTextId"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:hint="@string/id_transaction"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:textSize="13sp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextAmount"  />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonAuthorization"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:hint="@string/authorize"
+        android:backgroundTint="@color/colorAccent"
+        android:textColorHint="@color/background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayoutFormAuthorization"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

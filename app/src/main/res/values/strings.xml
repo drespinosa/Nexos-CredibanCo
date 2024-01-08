@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Nexos - CredibanCo</string>
+    <string name="commercial_code">CÓDIGO COMERCIO</string>
+    <string name="identification_mobile_device">ID DISPOSITIVO</string>
+    <string name="total_value">VALOR A PAGAR</string>
+    <string name="card_number">NÚMERO DE TARJETA</string>
+    <string name="id_transaction">ID TRANSACCIÓN</string>
+    <string name="transaction">TRANSACCIÓN</string>
+    <string name="authorize">AUTORIZAR</string>
+    <string name="authorize_transaction">AUTORIZAR TRANSACCIÓN</string>
+    <string name="find_transaction">BUSCAR TRANSACCIÓN</string>
+    <string name="get_transactions">OBTENER TRANSACCIONES</string>
+    <string name="authorizeInformation">INFORMACIÓN DE LA TRANSACCIÓN</string>
+    <string name="nothing_transactions">NO HAY TRANSACCIONES APROBADAS</string>
+    <string name="aprobed_transaction">AUTORIZADAS</string>
+    <string name="cancel_transaction">ANULADAS</string>
+    <string name="find_transaction_by_id">BUSCAR TRANSACCIÓN POR NÚMERO DE RECIBO</string>
+    <string name="all_transactions">TRANSACCIONES AUTORIZADAS Y ANULADAS</string>
+</resources>
