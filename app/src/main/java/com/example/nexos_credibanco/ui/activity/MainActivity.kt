@@ -7,7 +7,9 @@ import androidx.fragment.app.Fragment
 import com.example.nexos_credibanco.R
 import com.example.nexos_credibanco.databinding.ActivityMainBinding
 import com.example.nexos_credibanco.ui.fragments.HomeFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding

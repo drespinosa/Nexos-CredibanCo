@@ -1,22 +1,21 @@
 package com.example.nexos_credibanco.ui.viewmodels
 
-import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import com.example.nexos_credibanco.data.model.AuthorizationResponseVo
 import com.example.nexos_credibanco.data.model.AuthorizationVo
 import com.example.nexos_credibanco.data.model.CancelVo
-import com.example.nexos_credibanco.repository.TransactionRepository
+import com.example.nexos_credibanco.repository.implementation.IRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class AuthorizationViewModel(
-    private val application: Application,
+@HiltViewModel
+class AuthorizationViewModel @Inject constructor(
+    private val repository: IRepository,
 ) : ViewModel() {
-
-    private val repository: TransactionRepository = TransactionRepository(application)
 
     private val transactions = MutableLiveData<List<AuthorizationResponseVo>>()
     fun getTransactions(): LiveData<List<AuthorizationResponseVo>> = transactions
@@ -68,15 +67,5 @@ class AuthorizationViewModel(
         }
     }
 
-
-    class AuthorizationViewModelFactory(private val application: Application) : ViewModelProvider.Factory {
-        override fun <T : ViewModel> create(modelClass: Class<T>): T {
-            return if (modelClass.isAssignableFrom(AuthorizationViewModel::class.java)) {
-                AuthorizationViewModel(application) as T
-            } else {
-                throw IllegalArgumentException("Unknown ViewModel class")
-            }
-        }
-    }
 
 }

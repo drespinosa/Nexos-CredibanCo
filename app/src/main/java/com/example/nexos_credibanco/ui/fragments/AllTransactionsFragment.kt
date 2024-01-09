@@ -12,12 +12,14 @@ import com.example.nexos_credibanco.databinding.AllTransactionsFragmentBinding
 import com.example.nexos_credibanco.extensions.setCorrectColors
 import com.example.nexos_credibanco.ui.adapters.AllTransactionAdapter
 import com.example.nexos_credibanco.ui.viewmodels.AuthorizationViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AllTransactionsFragment : Fragment() {
 
     private lateinit var _binding: AllTransactionsFragmentBinding
     private val binding get() = _binding
-    private val viewModel: AuthorizationViewModel by viewModels { AuthorizationViewModel.AuthorizationViewModelFactory(requireActivity().application) }
+    private val viewModel by viewModels<AuthorizationViewModel>()
     private var transactions = mutableListOf<AuthorizationResponseVo>()
 
 

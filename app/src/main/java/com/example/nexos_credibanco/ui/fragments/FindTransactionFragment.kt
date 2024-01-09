@@ -18,13 +18,15 @@ import com.example.nexos_credibanco.databinding.FindTransactionFragmentBinding
 import com.example.nexos_credibanco.ui.adapters.FindTransactionAdapter
 import com.example.nexos_credibanco.ui.interfaces.ICanceItem
 import com.example.nexos_credibanco.ui.viewmodels.AuthorizationViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.Base64
 
+@AndroidEntryPoint
 class FindTransactionFragment : Fragment(), ICanceItem<AuthorizationResponseVo> {
 
     private lateinit var _binding: FindTransactionFragmentBinding
     private val binding get() = _binding
-    private val viewModel: AuthorizationViewModel by viewModels { AuthorizationViewModel.AuthorizationViewModelFactory(requireActivity().application) }
+    private val viewModel by viewModels<AuthorizationViewModel>()
     private var transactions = mutableListOf<AuthorizationResponseVo>()
     private var authorizationInfo = AuthorizationVo()
 

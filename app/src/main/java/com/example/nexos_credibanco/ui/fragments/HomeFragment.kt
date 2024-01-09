@@ -18,13 +18,15 @@ import com.example.nexos_credibanco.data.model.AuthorizationVo
 import com.example.nexos_credibanco.databinding.HomeFragmentBinding
 import com.example.nexos_credibanco.extensions.setCorrectColors
 import com.example.nexos_credibanco.ui.viewmodels.AuthorizationViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.Base64
 
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
 
     private lateinit var _binding: HomeFragmentBinding
     private val binding get() = _binding
-    private val viewModel: AuthorizationViewModel by viewModels { AuthorizationViewModel.AuthorizationViewModelFactory(requireActivity().application) }
+    private val viewModel by viewModels<AuthorizationViewModel>()
     private var authorizationInfo = AuthorizationVo()
 
 
