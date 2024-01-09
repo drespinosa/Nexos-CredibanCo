@@ -85,6 +85,7 @@ class HomeFragment : Fragment() {
         binding.includeFormAuthorization.editTextCommerceCode.setText(authorizationInfo.commerceCode)
         binding.includeFormAuthorization.editTextTerminalCode.setText(authorizationInfo.terminalCode)
 
+        // formatear el contenido del EditText como un valor monetario
         binding.includeFormAuthorization.editTextAmount.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(charSequence: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(charSequence: CharSequence?, start: Int, before: Int, count: Int) {}
@@ -108,10 +109,10 @@ class HomeFragment : Fragment() {
 
             val amount = binding.includeFormAuthorization.editTextAmount.text.toString().trim()
             if (amount.isBlank()) {
-                val errorMessage = "Falta añadir un valor para pagar"
+                val errorMessage = requireContext().getString(R.string.missing_value) + " " + requireContext().getString(R.string.total_value)
                 val errorBuilder = AlertDialog.Builder(requireContext())
                 errorBuilder.setMessage(errorMessage)
-                    .setPositiveButton("Aceptar") { dialog, _ ->
+                    .setPositiveButton(requireContext().getString(R.string.acept)) { dialog, _ ->
                         dialog.dismiss()
                     }
                 val errorDialog = errorBuilder.create()
@@ -121,10 +122,10 @@ class HomeFragment : Fragment() {
                     ("Basic ".plus(Base64.getEncoder().encodeToString((authorizationInfo.commerceCode + authorizationInfo.terminalCode).encodeToByteArray())))
                 viewModel.getAuthorizationTransaction(authorizationCode, getInformation())
 
-                val message = "¡Autorización exitosa!"
+                val message = requireContext().getString(R.string.successful)
                 val builder = AlertDialog.Builder(requireContext())
                 builder.setMessage(message)
-                    .setPositiveButton("Aceptar") { dialog, _ ->
+                    .setPositiveButton(requireContext().getString(R.string.acept)) { dialog, _ ->
                         dialog.dismiss()
                         binding.includeFormAuthorization.editTextAmount.text?.clear()
                     }

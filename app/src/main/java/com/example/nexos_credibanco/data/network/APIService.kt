@@ -1,4 +1,4 @@
-package com.example.nexos.data.network
+package com.example.nexos_credibanco.data.network
 
 import com.example.nexos_credibanco.data.model.CancelDTO
 import com.example.nexos_credibanco.data.model.CancelResponseDTO

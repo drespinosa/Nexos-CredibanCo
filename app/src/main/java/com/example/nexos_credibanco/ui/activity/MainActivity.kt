@@ -20,6 +20,9 @@ class MainActivity : AppCompatActivity() {
         replaceFragment(HomeFragment.newInstance())
     }
 
+    /**
+     * Este método reemplaza el fragmento actual en la actividad con uno nuevo.
+     */
     private fun replaceFragment(fragment: Fragment) {
         binding.fragment.isVisible = true
         val fragmentTransaction = this.supportFragmentManager.beginTransaction()

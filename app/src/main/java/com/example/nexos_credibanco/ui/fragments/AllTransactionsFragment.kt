@@ -28,13 +28,17 @@ class AllTransactionsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewModel.fetchTransactions()
+        observers()
+        listeners()
+    }
+
+    override fun onResume() {
+        super.onResume()
         binding.checkBoxAprobedTransaction.isChecked = true
         binding.checkBoxCancelTransaction.isChecked = true
         binding.checkBoxAprobedTransaction.setCorrectColors(binding.checkBoxCancelTransaction.isChecked)
         binding.checkBoxCancelTransaction.setCorrectColors(binding.checkBoxCancelTransaction.isChecked)
-        viewModel.fetchTransactions()
-        observers()
-        listeners()
     }
 
     private fun observers() {
@@ -58,6 +62,10 @@ class AllTransactionsFragment : Fragment() {
         }
     }
 
+    /**
+     * Método que actualiza dinámicamente el RecyclerView en función de los estados de dos checkboxes,
+     * filtrando y mostrando las transacciones según la combinación de selecciones.
+     */
     private fun updateRecyclerView() {
         val showAprobed = binding.checkBoxAprobedTransaction.isChecked
         val showCancelled = binding.checkBoxCancelTransaction.isChecked

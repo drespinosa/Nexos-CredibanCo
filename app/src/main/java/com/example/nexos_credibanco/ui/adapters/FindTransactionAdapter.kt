@@ -56,7 +56,7 @@ class FindTransactionAdapter(
 
         private fun setListeners(item: AuthorizationResponseVo) {
             binding.buttomCancelTransaction.setOnClickListener {
-                cancelItem.onDeleteClick(item)
+                cancelItem.onCancelClick(item)
                 notifyDataSetChanged()
             }
         }

@@ -16,4 +16,7 @@
     <string name="cancel_transaction">ANULADAS</string>
     <string name="find_transaction_by_id">BUSCAR TRANSACCIÓN POR NÚMERO DE RECIBO</string>
     <string name="all_transactions">TRANSACCIONES AUTORIZADAS Y ANULADAS</string>
+    <string name="missing_value">Diligenciar el campo:</string>
+    <string name="acept">ACEPTAR</string>
+    <string name="successful">"¡Autorización exitosa!"</string>
 </resources>

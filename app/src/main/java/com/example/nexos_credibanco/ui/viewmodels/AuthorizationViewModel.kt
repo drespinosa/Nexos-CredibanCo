@@ -23,30 +23,45 @@ class AuthorizationViewModel(
 
     private val filteredTransactions = MutableLiveData<List<AuthorizationResponseVo>>()
 
+    /**
+     * Método que obtiene la autorizaccion de la transacción
+     */
     fun getAuthorizationTransaction(authorizationCode: String, authorizationVo: AuthorizationVo) {
         viewModelScope.launch() {
             repository.authorizeTransaction(authorizationCode, authorizationVo)
         }
     }
 
-    fun fetchTransactions(){
+    /**
+     * Método que actualiza la lista de todas las transacciones
+     */
+    fun fetchTransactions() {
         viewModelScope.launch() {
             transactions.value = repository.getTransactions()
         }
     }
 
-    fun fetchFilterTransactions(){
+    /**
+     * Método que actualiza la lista de las transacciones autorizadas
+     */
+    fun fetchFilterTransactions() {
         viewModelScope.launch() {
             transactions.value = repository.getTransactions().filter { it.enable }
         }
     }
 
+    /**
+     * Método que obtiene la anulación de la transacción
+     */
     fun getCancelTransaction(authorizationCode: String, cancelVo: CancelVo) {
         viewModelScope.launch() {
             repository.cancelTransaction(authorizationCode, cancelVo)
         }
     }
 
+    /**
+     * Método que actualiza las transacciones
+     */
     fun updateTransactions(transactions: List<AuthorizationResponseVo>) {
         viewModelScope.launch() {
             filteredTransactions.value = transactions.filter { it.enable }

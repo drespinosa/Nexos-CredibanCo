@@ -6,13 +6,9 @@ import com.example.nexos_credibanco.data.model.CancelResponseVo
 
 open class CancelResponseMapper() {
 
-    fun businessToDto(business: CancelResponseVo): CancelResponseDTO {
-        return CancelResponseDTO(
-            statusCode = business.statusCode,
-            statusDescription = business.statusDescription,
-        )
-    }
-
+    /**
+     * Realiza la conversión de un objeto CancelResponseDTO a un objeto CancelResponseVo.
+     */
     fun dtoToBusiness(dto: CancelResponseDTO): CancelResponseVo {
         return CancelResponseVo(
             statusCode = dto.statusCode,

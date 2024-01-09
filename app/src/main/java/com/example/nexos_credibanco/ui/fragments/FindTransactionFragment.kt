@@ -66,7 +66,7 @@ class FindTransactionFragment : Fragment(), ICanceItem<AuthorizationResponseVo> 
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    override fun onDeleteClick(item: AuthorizationResponseVo) {
+    override fun onCancelClick(item: AuthorizationResponseVo) {
         val cancelVo = CancelVo(
             receiptId = item.receiptId,
             rrn = item.rrn,

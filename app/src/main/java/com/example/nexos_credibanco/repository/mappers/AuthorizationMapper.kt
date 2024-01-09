@@ -6,6 +6,9 @@ import com.example.nexos_credibanco.data.model.AuthorizationVo
 
 open class AuthorizationMapper() {
 
+    /**
+     * Realiza la conversión de un objeto AuthorizationVo a un objeto AuthorizationDTO.
+     */
     fun businessToDto(business: AuthorizationVo): AuthorizationDTO {
         return AuthorizationDTO(
             id = business.id,
@@ -13,16 +16,6 @@ open class AuthorizationMapper() {
             terminalCode = business.terminalCode,
             amount = business.amount,
             card = business.card,
-        )
-    }
-
-    fun dtoToBusiness(dto: AuthorizationDTO): AuthorizationVo {
-        return AuthorizationVo(
-            id = dto.id,
-            commerceCode = dto.commerceCode,
-            terminalCode = dto.terminalCode,
-            amount = dto.amount,
-            card = dto.card,
         )
     }
 

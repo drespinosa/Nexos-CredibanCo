@@ -6,15 +6,9 @@ import com.example.nexos_credibanco.data.model.AuthorizationResponseVo
 
 open class AuthorizationResponseMapper() {
 
-    fun businessToDto(business: AuthorizationResponseVo): AuthorizationResponseDTO {
-        return AuthorizationResponseDTO(
-            receiptId = business.receiptId,
-            rrn = business.rrn,
-            statusCode = business.statusCode,
-            statusDescription = business.statusDescription,
-        )
-    }
-
+    /**
+     * Realiza la conversión de un objeto AuthorizationResponseDTO a un objeto AuthorizationResponseVo.
+     */
     fun dtoToBusiness(dto: AuthorizationResponseDTO): AuthorizationResponseVo {
         return AuthorizationResponseVo(
             receiptId = dto.receiptId,
